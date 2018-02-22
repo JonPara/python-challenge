@@ -1,0 +1,32 @@
+import os
+import csv
+
+date = []
+revenue = []
+
+pybank_csv = os.path.join("budget_data_1.csv")
+
+with open(pybank_csv, newline = " ") as csv_file:
+    csvreader = csv.reader(csv_file, delimiter = ",")
+    
+    date_count = 0
+    revenue_count = 0
+    
+    
+    for row in csvreader:
+        date.append(row[0])
+        date_count = date_count + 1
+        
+        revenue.append(row[1])
+        revenue = revenue
+        revenue = sum(revenue)
+        
+
+print(" ")
+print("Financial Analysis Review")
+print("-------------------------")
+print("Total Months:", date_count - 1)
+print("Total Revenue:", revenue)
+print("Average Revenue Change")
+print("Greatest Increase in Revenue:")
+print("Greatest Decrease in Revenue:")
